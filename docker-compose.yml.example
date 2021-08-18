@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  <service_name>:
+    image: inerject/remote-tunnel
+    container_name: <container_name>
+    restart: unless-stopped
+    volumes:
+      - $SSH_DATA:/root/ssh:ro
+    environment:
+      DEST_HOST: $DEST_HOST
+      DEST_USER: $DEST_USER
+      REMOTE_HOST: $REMOTE_HOST
+      REMOTE_PORT: $REMOTE_PORT
+      LOCAL_HOST: $LOCAL_HOST
+      LOCAL_PORT: $LOCAL_PORT
